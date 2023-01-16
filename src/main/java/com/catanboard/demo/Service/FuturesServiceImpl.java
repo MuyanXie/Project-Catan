@@ -18,8 +18,8 @@ public class FuturesServiceImpl implements FuturesService{
     FuturesRepository futuresRepository;
 
     @Override
-    public Futures getFuture(Long id) {
-        Optional<Futures> future = futuresRepository.findById(id);
+    public Futures getFuture(Long futureid) {
+        Optional<Futures> future = futuresRepository.findById(futureid);
         return null;
     }
     
