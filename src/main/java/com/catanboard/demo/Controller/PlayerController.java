@@ -1,5 +1,5 @@
 package com.catanboard.demo.Controller;
 
-public class AbundanceController {
+public class PlayerController {
     
 }
