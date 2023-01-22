@@ -1,5 +1,9 @@
 package com.catanboard.demo.Service;
 
-public class AbundanceService {
-    
+import java.util.List;
+
+import com.catanboard.demo.POJO.Abundance;
+
+public interface AbundanceService {
+
 }
