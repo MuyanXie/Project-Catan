@@ -4,6 +4,8 @@ This project aims to promote an online room trading platform for the Catan Table
 
 First of all, this documnet will domenstrate how the website functions and the main usage of the platform. Also, this document describes the REST API implementations within the backend using Java __Spring Boot__ and H2 Database and provide the REST API for frontend development using __React.js__. 
 
+To be noticed, the folder Project-Catan-API-Test-Collection contains the Postman collections file for the 
+
 Interested in joining this project? Email me at muyansamxie@gmail.com
 
 ## How does the Platform Work?
@@ -25,6 +27,11 @@ __Contract Trade__:
 
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
+
+Also, you can download the __Swagger UI.html__ and __Swagger UI_files__ folder from Project-Catan-REST-API-Documentation to load a html view of REST API Documentation.
+
+Troubleshooting Update (2023.1.26): Make to enable CROS access of Swagger UI.html to Swagger UI_files in your brower to render the correct content in the opened html webpage.
+
 ## Additional Information:
 
 This project is implemented by Muyan(Sam) Xie, with all rights reserved.
