@@ -19,7 +19,7 @@ __Futures Contract__: Each contract consists of 9 elements: Contract ID, Initiat
 
 __Options Contract__:
 
-__Contract Trade__:
+__Contract Exchange and Update__:
 
 Based on timed results, Catan Board Game with the financial complexs implemented would have the play time shortened from up to 90 min to a bare 50 min on average with the help of this platform in tracking futures and options trade.
 
