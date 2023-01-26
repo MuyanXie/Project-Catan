@@ -4,7 +4,7 @@ This project aims to promote an online room trading platform for the Catan Table
 
 First of all, this documnet will domenstrate how the website functions and the main usage of the platform. Also, this document describes the REST API implementations within the backend using Java __Spring Boot__ and H2 Database and provide the REST API for frontend development using __React.js__. 
 
-To be noticed, the folder Project-Catan-API-Test-Collection contains the Postman collections file for the 
+To be noticed, the folder Project-Catan-API-Test-Collection contains the Postman collections file for the backend APIs; The folder Project-Catan-REST-API-Documentation provides an easy access to API documentations from the backend.
 
 Interested in joining this project? Email me at muyansamxie@gmail.com
 
@@ -20,6 +20,8 @@ __Futures Contract__: Each contract consists of 9 elements: Contract ID, Initiat
 __Options Contract__:
 
 __Contract Trade__:
+
+Based on timed results, Catan Board Game with the financial complexs implemented would have the play time shortened from up to 90 min to a bare 50 min on average with the help of this platform in tracking futures and options trade.
 
 ## Examplary Trade in Project Catan:
 
