@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "ba88c710-a3ed-4034-b412-b3007a7ac5aa",
+		"name": "Project Catan Tester",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25223289"
+	},
+	"item": [
+		{
+			"name": "Add Player Sam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Sam\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Player Mike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Mike\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Player Lucy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Lucy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Player Justin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Justin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Player Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Player Lucy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Ore to Sam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stuff\": \"ore\",\n    \"player_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Gold to Sam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stuff\": \"gold\",\n    \"player_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Wool to Sam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stuff\": \"wool\",\n    \"player_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See Sam's Abundances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/1/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ore in Sam",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/1/abundances/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See Sam's Abundances 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/1/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Wool to Mike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stuff\": \"wool\",\n    \"player_id\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/2/abundances",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"2",
+						"abundances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Abundances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/abundances/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"abundances",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Futures B/ Sam and Mike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"initiatorId\": \"1\",\n    \"acceptorId\" : \"2\",\n    \"initiatorItems\": \"2 Wool, 3 Ore\",\n    \"acceptorItems\" : \"3 Gold\",\n    \"activeTurn\" : \"10\",\n    \"initiatorCollateral\" : \"1 Wool\",\n    \"acceptorCollateral\" : \"1 Gold\",\n    \"status\" : \"-1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/futures",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"futures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sam Futures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/2/futures/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"2",
+						"futures",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
