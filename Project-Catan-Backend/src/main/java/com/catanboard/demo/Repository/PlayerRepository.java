@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.catanboard.demo.POJO.Player;
 
 public interface PlayerRepository extends CrudRepository<Player, Long>{
-    
+    Player findByName(String name);
 }

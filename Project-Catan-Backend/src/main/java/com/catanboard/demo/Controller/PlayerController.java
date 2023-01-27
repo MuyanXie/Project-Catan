@@ -134,8 +134,20 @@ public class PlayerController {
         return new ResponseEntity<>(futuresService.updateFutureInitiatorCollateral(futureId, future.getInitiatorCollateral()), HttpStatus.OK);
     }
 
-    @PutMapping(value="/{playerid}/futures/{futureid}/updateSTATUS")
-    public ResponseEntity<Futures> updateFutureStatus(@RequestBody Futures future, @PathVariable Long futureId) {
-        return new ResponseEntity<>(futuresService.updateFutureStatus(futureId, future.getStatus()), HttpStatus.OK);
+    @PutMapping(value="/{playerid}/futures/{futureId}/updateSTATUS/{authorizationCode}")
+    public ResponseEntity<Futures> updateFutureStatus(@RequestBody Futures future, @PathVariable Long futureId, @PathVariable String authorizationCode) {
+        Futures returned = futuresService.updateFutureStatus(futureId, future.getStatus(), authorizationCode);
+        if(returned.getStatus() == future.getStatus()){
+            return new ResponseEntity<>(returned , HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(returned, HttpStatus.UNAUTHORIZED);
+        }
+
+    }
+
+    @PutMapping(value = "/changeTURN/{code}/{turn}")
+    public ResponseEntity<HttpStatus> updateTurn(@PathVariable String code, @PathVariable int turn){
+        return new ResponseEntity<>(playerService.changeTurn(code,turn));
     }
 }

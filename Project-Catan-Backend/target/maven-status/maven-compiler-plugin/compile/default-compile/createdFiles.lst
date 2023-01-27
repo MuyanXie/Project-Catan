@@ -17,6 +17,7 @@ com/catanboard/demo/Service/AbundanceServiceImpl.class
 com/catanboard/demo/Exceptions/AbundanceNotFoundException.class
 com/catanboard/demo/Controller/FuturesController.class
 com/catanboard/demo/Service/FuturesServiceImpl.class
+com/catanboard/demo/Exceptions/AuthorizationFailedException.class
 com/catanboard/demo/Controller/OptionsController.class
 com/catanboard/demo/Repository/AbundanceRepository.class
 com/catanboard/demo/Exceptions/PlayerNotFoundException.class

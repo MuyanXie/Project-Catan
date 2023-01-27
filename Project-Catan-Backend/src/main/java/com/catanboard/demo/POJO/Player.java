@@ -28,4 +28,7 @@ public class Player {
     @Column(name = "name", nullable = false)
     private String name;
     
+    @NonNull
+    @Column(name = "code", nullable = false)
+    private String code;
 }
