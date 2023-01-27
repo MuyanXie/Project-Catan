@@ -24,6 +24,6 @@ public interface FuturesService{
     Futures updateFutureAcceptorCollateral(Long futureId, String acceptorCollateral);
     Futures updateFutureInitiatorCollateral(Long futureId, String initiatorCollateral);
 
-    Futures updateFutureStatus(Long futureId, int status);
+    Futures updateFutureStatus(Long futureId, int status, String code);
 
 }

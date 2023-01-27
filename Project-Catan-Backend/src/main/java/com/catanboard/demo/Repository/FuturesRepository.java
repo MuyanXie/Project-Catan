@@ -18,4 +18,6 @@ public interface FuturesRepository extends CrudRepository<Futures, Long>{
     @Query(value = "SELECT * FROM FUTURES WHERE initiator_id = :Id and status != -100",
     nativeQuery = true)
     List<Futures> findByInitiatorId(@Param("Id") String Id);
+
+    
 }

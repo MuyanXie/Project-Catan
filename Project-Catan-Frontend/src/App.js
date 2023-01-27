@@ -26,8 +26,8 @@ class App extends Component {
         <div class= "container">
           <table id= "table">
             <tr>
-              <th>Student</th>
-              <th>Subject</th>
+              <th>Player ID</th>
+              <th>Player Name</th>
             </tr>
               {
                 this.state.players.map((player, index) =>  

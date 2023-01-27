@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.catanboard.demo.Exceptions.FutureNotFoundException;
 import com.catanboard.demo.POJO.Futures;
 import com.catanboard.demo.Repository.FuturesRepository;
+import com.catanboard.demo.Repository.PlayerRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -18,6 +19,9 @@ public class FuturesServiceImpl implements FuturesService{
 
     @Autowired
     FuturesRepository futuresRepository;
+
+    @Autowired
+    PlayerRepository playerRepository;
 
     @Override
     public Futures getFuture(Long futureid) {
@@ -80,11 +84,14 @@ public class FuturesServiceImpl implements FuturesService{
     }
 
     @Override
-    public Futures updateFutureStatus(Long futureId, int status) {
+    public Futures updateFutureStatus(Long futureId, int status, String code) {
         Optional<Futures> future = futuresRepository.findById(futureId);
         Futures unwrappedFuture =  unwrapFuture(future, futureId);
-        unwrappedFuture.setStatus(status);
+        if((playerRepository.findById(Long.parseLong(unwrappedFuture.getAcceptorId())).get().getCode()).equals(code)){
+            unwrappedFuture.setStatus(status);
+        }  
         return futuresRepository.save(unwrappedFuture);
+
     }
 
     @Override
