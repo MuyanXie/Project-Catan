@@ -2,6 +2,7 @@ import { useState } from 'react';
 // import React, { Component } from 'react';
 import './App.css';
 import MainHeader from './components/MainHeader';
+import RegistrationForm from './components/RegistractionForm';
 
 function App(){
   const [ModalisVisible, setModalisVisible] = useState(true);
@@ -17,7 +18,9 @@ function App(){
 
   return(
     <>
+
     <MainHeader onCreatePost={showModalHandler}/>
+    <RegistrationForm />
     </>
   );
 }
