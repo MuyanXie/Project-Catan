@@ -42,7 +42,7 @@ const RegisterForm = () => {
             const selectedData = {name : formData.name, code : formData.password}
             const response = await axios.post('http://localhost:8080/player', selectedData);
             if (response.status === 201) {
-                navigate('/');
+                navigate('/players');
             }
           } 
           catch (error) {

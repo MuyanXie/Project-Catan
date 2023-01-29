@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .header a {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .player-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  
+  .player-table th,
+  .player-table td {
+    border: 1px solid #333;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  .player-table th {
+    background-color: #333;
+    color: white;
+  }
+  
