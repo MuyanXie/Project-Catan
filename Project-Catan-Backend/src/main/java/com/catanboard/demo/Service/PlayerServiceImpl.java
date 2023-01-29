@@ -67,4 +67,10 @@ public class PlayerServiceImpl implements PlayerService{
         }
         return HttpStatus.UNAUTHORIZED;
     }
+
+    @Override
+    public int findAdminNumber() {
+        System.out.print(playerRepository.findAdminNumber());
+        return playerRepository.findAdminNumber();
+    }
 }

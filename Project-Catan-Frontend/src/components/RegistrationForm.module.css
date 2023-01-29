@@ -12,7 +12,7 @@
   .form-group{
     display: block;
   }
-  
+
   .head {
     font-size: medium;
     padding: 1px;
@@ -36,7 +36,7 @@
     background-color: rgb(88, 222, 246);
     border-radius: 5px;
     font-size: medium;
-    display: block;
+    /* display: block; */
     padding: 5px;
     border: none;
     margin: 10px auto;

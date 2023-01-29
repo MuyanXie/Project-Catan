@@ -54,6 +54,9 @@ public class PlayerController {
 
     @PostMapping
     public ResponseEntity<Player> saveStudent(@RequestBody Player player) {
+        if (player.getName().equals("ADMIN") && playerService.findAdminNumber() >= 1){
+            return new ResponseEntity<>(player,  HttpStatus.CONFLICT);
+        }
         return new ResponseEntity<>(playerService.savePlayer(player),  HttpStatus.CREATED);
     }
 

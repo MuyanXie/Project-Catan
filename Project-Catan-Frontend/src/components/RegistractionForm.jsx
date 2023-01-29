@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import classes from './RegistrationForm.module.css';
 
 const RegisterForm = () => {
@@ -8,6 +10,7 @@ const RegisterForm = () => {
     passwordConfirm: ''
   });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFormData({
@@ -16,7 +19,7 @@ const RegisterForm = () => {
     });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit =async (event) => {
     event.preventDefault();
     let formErrors = {};
 
@@ -35,10 +38,18 @@ const RegisterForm = () => {
     setErrors(formErrors);
 
     if (Object.keys(formErrors).length === 0) {
-      console.log('Form Submitted');
-      // Your submission logic here
-    }
-  }
+        try {
+            const selectedData = {name : formData.name, code : formData.password}
+            const response = await axios.post('http://localhost:8080/player', selectedData);
+            if (response.status === 201) {
+                navigate('/');
+            }
+          } 
+          catch (error) {
+            console.log(error);
+          }
+        }
+      }
 
   return (
     <form onSubmit={handleSubmit} className = {classes.form}>
@@ -69,6 +80,6 @@ const RegisterForm = () => {
       <button type="submit" className={classes.btn}>Register</button>
     </form>
   );
-}
+  }
 
 export default RegisterForm;
