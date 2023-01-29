@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Sam\"\n}",
+					"raw": "{\n    \"name\" : \"Sam\",\n    \"code\" : \"samuel\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Mike\"\n}",
+					"raw": "{\n    \"name\" : \"Mike\",\n    \"code\" : \"michael\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -67,7 +67,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Lucy\"\n}",
+					"raw": "{\n    \"name\" : \"Lucy\",\n    \"code\" : \"lucy\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,7 +94,34 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Justin\"\n}",
+					"raw": "{\n    \"name\" : \"Justin\",\n    \"code\" : \"just\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Player ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"ADMIN\",\n    \"code\" : \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -383,16 +410,99 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/player/2/futures/all",
+					"raw": "localhost:8080/player/1/futures/all",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"player",
-						"2",
+						"1",
 						"futures",
 						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorize the Trade",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n    \"initiatorId\": \"1\",\n    \"acceptorId\" : \"2\",\n    \"initiatorItems\": \"2 Wool, 3 Ore\",\n    \"acceptorItems\" : \"3 Gold\",\n    \"activeTurn\" : \"10\",\n    \"initiatorCollateral\" : \"1 Wool\",\n    \"acceptorCollateral\" : \"1 Gold\",\n    \"status\" : \"0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/futures/1/updateSTATUS/michael",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"futures",
+						"1",
+						"updateSTATUS",
+						"michael"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Futures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/futures/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"futures",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bad Authorization Example",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n    \"initiatorId\": \"1\",\n    \"acceptorId\" : \"2\",\n    \"initiatorItems\": \"2 Wool, 3 Ore\",\n    \"acceptorItems\" : \"3 Gold\",\n    \"activeTurn\" : \"10\",\n    \"initiatorCollateral\" : \"1 Wool\",\n    \"acceptorCollateral\" : \"1 Gold\",\n    \"status\" : \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/1/futures/1/updateSTATUS/mike",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"1",
+						"futures",
+						"1",
+						"updateSTATUS",
+						"mike"
 					]
 				}
 			},
