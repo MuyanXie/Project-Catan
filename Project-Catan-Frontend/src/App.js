@@ -1,28 +1,17 @@
-import { useState } from 'react';
-// import React, { Component } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import RegisterForm from './components/RegistractionForm';
+import HomePage from './components/HomePage';
 import './App.css';
-import MainHeader from './components/MainHeader';
-import RegistrationForm from './components/RegistractionForm';
 
-function App(){
-  const [ModalisVisible, setModalisVisible] = useState(true);
-
-
-  function showModalHandler(){
-    setModalisVisible(true);
-  }
-
-  function hideModalHandler(){
-    setModalisVisible(false);
-  }
-
-  return(
-    <>
-
-    <MainHeader onCreatePost={showModalHandler}/>
-    <RegistrationForm />
-    </>
-  );
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterForm />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;

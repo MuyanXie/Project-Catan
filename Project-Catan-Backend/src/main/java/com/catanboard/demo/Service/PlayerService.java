@@ -13,4 +13,6 @@ public interface PlayerService {
     List<Player> getPlayers();
 
     HttpStatus changeTurn(String code, int turn);    
+
+    int findAdminNumber();
 }
