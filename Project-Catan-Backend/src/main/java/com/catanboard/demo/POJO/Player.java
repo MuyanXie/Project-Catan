@@ -9,6 +9,8 @@ import javax.persistence.Id;
 
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.*;
 
 @Getter
@@ -29,6 +31,7 @@ public class Player {
     private String name;
     
     @NonNull
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "code", nullable = false)
     private String code;
 }

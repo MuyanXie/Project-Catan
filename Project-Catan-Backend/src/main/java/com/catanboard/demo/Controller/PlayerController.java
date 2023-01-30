@@ -53,11 +53,16 @@ public class PlayerController {
     }
 
     @PostMapping
-    public ResponseEntity<Player> saveStudent(@RequestBody Player player) {
+    public ResponseEntity<Player> savePlayer(@RequestBody Player player) {
         if (player.getName().equals("ADMIN") && playerService.findAdminNumber() >= 1){
             return new ResponseEntity<>(player,  HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>(playerService.savePlayer(player),  HttpStatus.CREATED);
+    }
+
+    @GetMapping(value="/{name}/{code}/signin")
+    public ResponseEntity<Player> signin(@PathVariable String name, @PathVariable String code) {
+        return new ResponseEntity<>( playerService.getPlayerByName(name), playerService.signin(name, code));
     }
 
     @GetMapping(value="/all")

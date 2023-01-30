@@ -12,7 +12,11 @@ public interface PlayerService {
     void deletePlayer(Long id);
     List<Player> getPlayers();
 
-    HttpStatus changeTurn(String code, int turn);    
+    HttpStatus changeTurn(String code, int turn);   
 
+    HttpStatus signin(String name, String code);
+    
     int findAdminNumber();
+
+    Player getPlayerByName(String name);
 }

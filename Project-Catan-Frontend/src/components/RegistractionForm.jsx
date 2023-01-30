@@ -41,7 +41,9 @@ const RegisterForm = () => {
         try {
             const selectedData = {name : formData.name, code : formData.password}
             const response = await axios.post('http://localhost:8080/player', selectedData);
+            console.log(response)
             if (response.status === 201) {
+                localStorage.setItem("token", JSON.stringify(response.data))
                 navigate('/players');
             }
           } 

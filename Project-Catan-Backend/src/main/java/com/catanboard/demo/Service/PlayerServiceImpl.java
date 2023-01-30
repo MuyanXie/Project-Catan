@@ -69,8 +69,26 @@ public class PlayerServiceImpl implements PlayerService{
     }
 
     @Override
+    public HttpStatus signin(String name, String code) {
+        try{
+            if(code.equals(playerRepository.findByName(name).getCode())){
+            return HttpStatus.ACCEPTED;
+            }
+            return HttpStatus.FORBIDDEN;
+        }
+        catch(Exception e){
+            return HttpStatus.FORBIDDEN;
+        }
+    }
+
+    @Override
+    public Player getPlayerByName(String name) {
+        // TODO Auto-generated method stub
+        return playerRepository.findByName(name);
+    }
+
+    @Override
     public int findAdminNumber() {
-        System.out.print(playerRepository.findAdminNumber());
         return playerRepository.findAdminNumber();
     }
 }
