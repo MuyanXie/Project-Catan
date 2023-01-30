@@ -24,6 +24,7 @@ const Header = ({ title }) => {
     </h1>
       {/* {localStorage.getItem("token") ? ( */}
         <p>
+        <button onClick={() => navigate('/')} className={classes.button} >Home</button>
         <button onClick={() => navigate('/players')} className={classes.button} >Players</button>
         <button onClick={() => navigate('/abundances')} className={classes.button} >Abundances</button>
         <button onClick={() => navigate('/futures')} className={classes.button} >Futures</button>
