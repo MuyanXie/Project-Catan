@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {MdMessage} from 'react-icons/md';
 import classes from "./PlayerDisplay.module.css";
 import { useNavigate } from 'react-router-dom';
+import Header from "./Header";
 
 const PlayerDisplay = () => {
   const [players, setPlayers] = useState([]);
@@ -17,18 +17,7 @@ const PlayerDisplay = () => {
 
   return (
     <>
-    <header className={classes.header}>
-    <h1 className={classes.logo}>
-      <MdMessage />
-      Player Information
-    </h1>
-    <p>
-      <button className={classes.button} onClick={() => navigate('/')}>
-          Back to Home
-      </button>
-    </p>
-    </header>
-
+    <Header title="Players" />
     <div>
       <table className = {classes.table}>
         <thead>
