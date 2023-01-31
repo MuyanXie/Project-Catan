@@ -54,7 +54,9 @@ const RegisterForm = () => {
       }
 
   return (
+
     <form onSubmit={handleSubmit} className = {classes.form}>
+    <h1 className={classes.head}>Sign In!</h1>
       <label className={classes.label}>
         Name:
         <br />
