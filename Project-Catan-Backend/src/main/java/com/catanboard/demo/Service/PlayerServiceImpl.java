@@ -83,7 +83,6 @@ public class PlayerServiceImpl implements PlayerService{
 
     @Override
     public Player getPlayerByName(String name) {
-        // TODO Auto-generated method stub
         return playerRepository.findByName(name);
     }
 

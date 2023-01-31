@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import PlayerDisplay from './components/PlayerDisplay';
 import SignIn from './components/Signin';
 import './App.css';
+import AddAbundance from './components/AddAbundance';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/players" element={<PlayerDisplay />}></Route>
+        <Route path="abundanceform" element={<AddAbundance />}></Route>
       </Routes>
     </Router>
   )

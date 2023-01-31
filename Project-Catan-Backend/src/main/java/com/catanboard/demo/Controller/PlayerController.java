@@ -57,7 +57,10 @@ public class PlayerController {
         if (player.getName().equals("ADMIN") && playerService.findAdminNumber() >= 1){
             return new ResponseEntity<>(player,  HttpStatus.CONFLICT);
         }
-        return new ResponseEntity<>(playerService.savePlayer(player),  HttpStatus.CREATED);
+        if(playerService.getPlayerByName(player.getName()) == null){
+            return new ResponseEntity<>(playerService.savePlayer(player),  HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(player,  HttpStatus.CONFLICT);
     }
 
     @GetMapping(value="/{name}/{code}/signin")
@@ -75,9 +78,19 @@ public class PlayerController {
         return new ResponseEntity<>(abundanceService.getPlayerAbundances(id), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/{playerid}/abundances")
-    public ResponseEntity<Abundance> saveAbundance(@RequestBody Abundance abundance, @PathVariable Long playerid) {
-        return new ResponseEntity<>(abundanceService.saveAbundance(playerid, abundance),  HttpStatus.CREATED);
+    @PostMapping(value = "/{playerid}/abundances/{code}")
+    public ResponseEntity<Abundance> saveAbundance(@RequestBody Abundance abundance, @PathVariable Long playerid, @PathVariable String code) {
+        if(playerService.getPlayer(playerid).getCode().equals(code)){
+            for(Abundance i: abundanceService.getPlayerAbundances(playerid)){
+                if(i.getStuff().equals(abundance.getStuff())){
+                    return new ResponseEntity<>(abundance, HttpStatus.CONFLICT);
+                }
+            }
+            return new ResponseEntity<>(abundanceService.saveAbundance(playerid, abundance),  HttpStatus.CREATED);
+        }
+        else{
+            return new ResponseEntity<>(abundance, HttpStatus.UNAUTHORIZED);
+        }
     }
 
     @DeleteMapping(value = "/{playerid}/abundances/{abundanceId}")
