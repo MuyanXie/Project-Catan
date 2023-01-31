@@ -5,7 +5,7 @@
     width: 20rem;
     margin: 2rem auto;
     border-radius: 6px;
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 
@@ -14,7 +14,9 @@
   }
 
   .head {
-    font-size: medium;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: xx-large;
+    color: white;
     padding: 1px;
   }
 
@@ -23,7 +25,7 @@
     font-size: medium;
     color: white;
     padding: 5px;
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
   }
    
   .input{
@@ -34,7 +36,7 @@
   }
   .btn{
     color: rgb(2, 2, 2);
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     background-color: rgb(135,206,235);
     border-radius: 5px;
     font-size: medium;
@@ -50,29 +52,16 @@
   .messages{
     display: block;
     padding: 5px;
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     justify-content: center;
   }
-  .head {
-    font-family: cursive;
-    font-size: xx-large;
-    color: white;
-    padding: 1px;
-  }
+
   .error{
     display: block;
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     font-size: xx-small;
     color: rgb(233, 181, 69);
     width: fit-content;
     height: 1px;
   }
    
-  .success{
-    display: block;
-    font-size: xx-small;
-    background-color: lightblue;
-    color: black;
-    width: fit-content;
-    height: 1px;
-  }

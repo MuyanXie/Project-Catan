@@ -14,13 +14,13 @@
   }
 
   .head {
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     font-size: xx-large;
     padding: 1px;
   }
 
 .label{
-  font-family: cursive;
+  font-family: "Lucida Handwriting", cursive;
     display: block;
     text-align: center;
     font-size: larger;
@@ -41,7 +41,7 @@
     font-size: x-large;
   }
   .btn{
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     color: rgb(2, 2, 2);
     background-color: rgb(135,206,235);
     border-radius: 5px;
@@ -61,7 +61,7 @@
   .messages{
     display: block;
     padding: 5px;
-    font-family: cursive;
+    font-family: "Lucida Handwriting", cursive;
     justify-content: center;
   }
    
