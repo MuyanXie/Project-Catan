@@ -22,7 +22,6 @@ const Header = ({ title }) => {
       <MdMessage />
       {title}
     </h1>
-      {/* {localStorage.getItem("token") ? ( */}
         <p>
         <button onClick={() => navigate('/')} className={classes.button} >Home</button>
         <button onClick={() => navigate('/players')} className={classes.button} >Players</button>
@@ -36,7 +35,6 @@ const Header = ({ title }) => {
         <button onClick={handleLogin} className={classes.button}>Login</button>
         )}
         </p>
-      {/* ) : null} */}
     </header>
   );
 };

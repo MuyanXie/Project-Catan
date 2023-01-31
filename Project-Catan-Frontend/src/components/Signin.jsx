@@ -4,41 +4,51 @@ import classes from './Signin.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
-  const [name, setName] = useState('');
-  const [code, setCode] = useState('');
-  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    code: '',
+  });
   const navigate = useNavigate();
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  }
+  const [errors, setErrors] = useState({});
   const handleSubmit = async (event) => {
+    let formErrors = {};
+    if(formData.name === "ADMIN"){
+      formErrors.name = "ADMIN Root Unsignable!"
+    }
     event.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:8080/player/${name}/${code}/signin`);
-      console.log(response.status)
+      const response = await axios.get(`http://localhost:8080/player/${formData.name}/${formData.code}/signin`);
       if (response.status === 202) {
-        // Save the token to local storage if the response is successful
-
-        localStorage.setItem('token', JSON.stringify(response.data));
-
+        const temp = response.data
+        temp.code = formData.code
+        localStorage.setItem('token', JSON.stringify(temp));
         navigate('/players')
       }
     } catch (error) {
-
-      setError('Not in record!');
+      formErrors.login = "Not in Record!"
     }
+    setErrors(formErrors);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit} className = {classes.form}>
       <h1 className={classes.head}>Sign In!</h1>
-        {error && <p className={classes.label}>{error}</p>}
+        {errors.login && <p className={classes.label}>{errors.login}</p>}
         <label htmlFor="name" className={classes.label} >Name:</label>
-        <input className={classes.input} type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+        <input className={classes.input} type="text" name = "name" onChange={handleChange} />
         <br />
+        {errors.name && <p className={classes.label}>{errors.name}</p>}
         <br /> 
-
         <label htmlFor="code" className={classes.label} >Password:</label>
-        <input className={classes.input} type="password" id="code" value={code} onChange={(e) => setCode(e.target.value)} />
-
+        <input className={classes.input} type="password" name = "code" onChange={handleChange} />
         <br /> 
         <br />
         <button type="submit" className={classes.btn}>Sign In</button>

@@ -35,23 +35,29 @@ const RegisterForm = () => {
       formErrors.passwordConfirm = 'Passwords do not match';
     }
 
-    setErrors(formErrors);
-
     if (Object.keys(formErrors).length === 0) {
         try {
             const selectedData = {name : formData.name, code : formData.password}
             const response = await axios.post('http://localhost:8080/player', selectedData);
-            console.log(response)
+            const temp = response.data
+            temp.code = formData.password
             if (response.status === 201) {
-                localStorage.setItem("token", JSON.stringify(response.data))
+                localStorage.setItem("token", JSON.stringify(temp))
                 navigate('/players');
             }
           } 
           catch (error) {
-            console.log(error);
+            if (error.response.status === 409 & formData.name === "ADMIN"){
+              formErrors.admin = "ADMIN already exists!";
+            }
+            else if(error.response.status === 409){
+              formErrors.admin = "Username already exists!"
+            }
           }
         }
-      }
+    setErrors(formErrors);
+        
+  }
 
   return (
 
@@ -79,6 +85,7 @@ const RegisterForm = () => {
         <br />
         <input type="password" name="passwordConfirm" onChange={handleChange} />
         {errors.passwordConfirm && <p>{errors.passwordConfirm}</p>}
+        {errors.admin && <p>{errors.admin}</p>}
       </label>
       <br />
       <button type="submit" className={classes.btn}>Register</button>
