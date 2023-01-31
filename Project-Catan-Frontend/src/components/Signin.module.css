@@ -14,14 +14,16 @@
   }
 
   .head {
-    font-size: medium;
+    font-family: cursive;
+    font-size: xx-large;
     padding: 1px;
   }
 
 .label{
+  font-family: cursive;
     display: block;
     text-align: center;
-    font-size: medium;
+    font-size: larger;
     padding: 5px;
   }
    
@@ -39,14 +41,17 @@
     font-size: x-large;
   }
   .btn{
+    font-family: cursive;
     color: rgb(2, 2, 2);
     background-color: rgb(135,206,235);
     border-radius: 5px;
     font-size: medium;
     padding: 5px;
     border: none;
-    margin: 10px auto;
+    margin: auto;
+    display: block;
     text-align: center;
+
   }
 
   .btn:hover {
@@ -56,6 +61,7 @@
   .messages{
     display: block;
     padding: 5px;
+    font-family: cursive;
     justify-content: center;
   }
    

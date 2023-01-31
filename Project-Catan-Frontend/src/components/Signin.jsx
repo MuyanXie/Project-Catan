@@ -29,16 +29,16 @@ const SignIn = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className = {classes.form}>
-        <h1 className={classes.head}>Sign In</h1>
+      <h1 className={classes.head}>Sign In!</h1>
         {error && <p className={classes.label}>{error}</p>}
         <label htmlFor="name" className={classes.label} >Name:</label>
         <input className={classes.input} type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
         <br />
         <br /> 
-        <br />
+
         <label htmlFor="code" className={classes.label} >Password:</label>
         <input className={classes.input} type="password" id="code" value={code} onChange={(e) => setCode(e.target.value)} />
-        <br />
+
         <br /> 
         <br />
         <button type="submit" className={classes.btn}>Sign In</button>
