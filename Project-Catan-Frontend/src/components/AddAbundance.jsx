@@ -34,7 +34,7 @@ const AddAbundance = () => {
             }
           } 
         catch (error) {
-            if (error instanceof TypeError){
+            if (error instanceof TypeError || error.response.status === 500){
               localStorage.clear();
               formErrors.unknown = "Cookies Error, Plase Re-login..."
               setTimeout(() => {
