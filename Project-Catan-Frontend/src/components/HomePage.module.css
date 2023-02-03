@@ -20,7 +20,7 @@
     background-color: transparent;
     /* background-color: rgb(88, 222, 246); */
     /* border-radius: 5px; */
-    font-size: larger;
+    font-size: xx-large;
     /* bring your own prefixes */
     /* transform: translate(-50%, -50%); */
     text-decoration: underline;
@@ -32,6 +32,6 @@
 
   .btn:hover {
     color: #97c4d9;
-    font-size: x-large;
+    font-size: larger;
   }
   

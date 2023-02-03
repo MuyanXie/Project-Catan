@@ -32,19 +32,19 @@ public class AbundanceServiceImpl implements AbundanceService{
     }
 
     @Override
-    public List<Abundance> getPlayerAbundances(long playerId) {
+    public List<Abundance> getPlayerAbundances(Long playerId) {
         return (List<Abundance>)abundanceRepository.findByPlayerId(playerId);
     }
 
     @Override
-    public Abundance saveAbundance(long playerId, Abundance abundance) {
+    public Abundance saveAbundance(Long playerId, Abundance abundance) {
         Player player = PlayerServiceImpl.unwrapPlayer(playerRepository.findById(playerId), playerId);
         abundance.setPlayer(player);
         return abundanceRepository.save(abundance);
     }
 
     @Override
-    public void deleteAbundance(long abundanceId) {
+    public void deleteAbundance(Long abundanceId) {
         abundanceRepository.deleteById(abundanceId);
     }
 
