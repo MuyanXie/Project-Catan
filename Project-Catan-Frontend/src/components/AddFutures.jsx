@@ -4,9 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import classes from './AddAbundance.module.css';
 import Header from "./Header";
 
-const AddAbundance = () => {
+const AddFutures = () => {
   const [formData, setFormData] = useState({
-    stuff: '',
+    "initiatorId": JSON.parse(localStorage.getItem("token")).id,
+    "acceptorId" : "",
+    "initiatorItems": "",
+    "acceptorItems" : "",
+    "activeTurn" : "",
+    "initiatorCollateral" : "",
+    "acceptorCollateral" : "",
+    "status" : "-1"
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -28,7 +35,8 @@ const AddAbundance = () => {
         try {
             const selectedData = {stuff : formData.stuff, id: JSON.parse(localStorage.getItem("token")).id}
             const code = JSON.parse(localStorage.getItem("token")).code
-            const response = await axios.post(`http://localhost:8080/player/${selectedData.id}/abundances/${code}`, selectedData);
+            const playerId = JSON.parse(localStorage.getItem("token")).id
+            const response = await axios.post(`http://localhost:8080/player/${playerId}/abundances/${code}`, selectedData);
             if (response.status === 201) {
                 navigate('/abundances');
             }
@@ -60,8 +68,8 @@ const AddAbundance = () => {
     <>
     <Header title="Add..." />
     <form onSubmit={handleSubmit} className = {classes.form}>
-    <button onClick={() => navigate('/abundances')} className = {classes.backbtn}>Back to Abundances...</button>
-    <h1 className={classes.head}>Add Abundance...</h1>
+    <button onClick={() => navigate('/abundances')} className = {classes.backbtn}>Back to Futures...</button>
+    <h1 className={classes.head}>Add Future Trade...</h1>
       {errors.unauthorized && <p className={classes.label}>{errors.unauthorized}</p>}
       {errors.unknown && <p className={classes.label}>{errors.unknown}</p>}
       {errors.conflict && <p className={classes.label}>{errors.conflict}</p>}
@@ -87,4 +95,4 @@ const AddAbundance = () => {
   );
   
   };
-export default AddAbundance;
+export default AddFutures;

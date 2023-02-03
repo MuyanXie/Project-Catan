@@ -1,6 +1,6 @@
 .form {
     position: relative;
-    background-color: #16bae7;
+    background-color: #ffffff;
     padding: 1rem;
     width: 20rem;
     margin: 2rem auto;
@@ -16,14 +16,14 @@
   .head {
     font-family: "Lucida Handwriting", cursive;
     font-size: xx-large;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 1px;
   }
 
 .label{
     display: block;
     font-size: medium;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 5px;
     font-family: "Lucida Handwriting", cursive;
   }

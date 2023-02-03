@@ -1,6 +1,6 @@
 .form {
     position: relative;
-    background-color: #16bae7;
+    background-color: #ffffff;
     padding: 1rem;
     width: 20rem;
     margin: 2rem auto;
@@ -29,7 +29,6 @@
    
   .input{
     font-size: larger;
-    /* padding: 5px; */
     text-align: center;
     margin: auto;
     display: grid;
