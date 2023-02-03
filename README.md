@@ -32,7 +32,7 @@ A Maven repository dependency *Open Api Documentation* has been embeded into pom
 
 Also, you can download the __Swagger UI.html__ and __Swagger UI_files__ folder from Project-Catan-REST-API-Documentation to load a html view of REST API Documentation.
 
-Troubleshooting Update (2023.1.26): Make to enable CROS access of Swagger UI.html to Swagger UI_files in your brower to render the correct content in the opened html webpage.
+Troubleshooting Update (2023.1.26): Make sure to enable CROS access of Swagger UI.html to Swagger UI_files in your brower to render the correct content in the opened html webpage.
 
 ## Additional Information:
 
