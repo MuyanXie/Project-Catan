@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import classes from "./PlayerDisplay.module.css";
-import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 
 const PlayerDisplay = () => {
   const [players, setPlayers] = useState([]);
 
-  const navigate = useNavigate();
+
   useEffect(() => {
     fetch('http://localhost:8080/player/all')
       .then((res) => res.json())

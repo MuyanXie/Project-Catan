@@ -8,7 +8,7 @@ public interface AbundanceService {
 
     Abundance getAbundance(Long abundanceId);
     List<Abundance> getAllAbundances();
-    List<Abundance> getPlayerAbundances(long playerId);
-    Abundance saveAbundance(long playerId, Abundance abundance);
-    void deleteAbundance(long abundanceId);
+    List<Abundance> getPlayerAbundances(Long playerId);
+    Abundance saveAbundance(Long playerId, Abundance abundance);
+    void deleteAbundance(Long abundanceId);
 }
