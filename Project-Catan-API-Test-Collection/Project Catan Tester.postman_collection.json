@@ -194,7 +194,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/player/1/abundances",
+					"raw": "localhost:8080/player/1/abundances/samuel",
 					"host": [
 						"localhost"
 					],
@@ -202,7 +202,8 @@
 					"path": [
 						"player",
 						"1",
-						"abundances"
+						"abundances",
+						"samuel"
 					]
 				}
 			},
@@ -223,7 +224,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/player/1/abundances",
+					"raw": "localhost:8080/player/1/abundances/samuel",
 					"host": [
 						"localhost"
 					],
@@ -231,7 +232,8 @@
 					"path": [
 						"player",
 						"1",
-						"abundances"
+						"abundances",
+						"samuel"
 					]
 				}
 			},
@@ -252,7 +254,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/player/1/abundances",
+					"raw": "localhost:8080/player/1/abundances/samuel",
 					"host": [
 						"localhost"
 					],
@@ -260,7 +262,8 @@
 					"path": [
 						"player",
 						"1",
-						"abundances"
+						"abundances",
+						"samuel"
 					]
 				}
 			},
@@ -342,7 +345,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/player/2/abundances",
+					"raw": "localhost:8080/player/2/abundances/michael",
 					"host": [
 						"localhost"
 					],
@@ -350,7 +353,8 @@
 					"path": [
 						"player",
 						"2",
-						"abundances"
+						"abundances",
+						"michael"
 					]
 				}
 			},
