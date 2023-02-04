@@ -14,10 +14,14 @@ import com.catanboard.demo.Repository.FuturesRepository;
 import com.catanboard.demo.Repository.PlayerRepository;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Service
 public class PlayerServiceImpl implements PlayerService{
+
+    int cur_turn =1;
     
     @Autowired
     PlayerRepository playerRepository;
@@ -63,9 +67,15 @@ public class PlayerServiceImpl implements PlayerService{
                 }
                 futuresRepository.save(cur);
             }
+            cur_turn = turn;
             return HttpStatus.ACCEPTED;
         }
         return HttpStatus.UNAUTHORIZED;
+    }
+
+    @Override
+    public int getTurn() {
+        return cur_turn;
     }
 
     @Override
