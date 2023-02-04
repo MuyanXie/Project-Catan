@@ -104,9 +104,12 @@ public class PlayerController {
         return new ResponseEntity<>(abundanceService.getPlayerAbundances(abundanceId), HttpStatus.OK);
     }
 
-    @PostMapping(value="/{playerid}/futures")
-    public ResponseEntity<Futures> saveFutue(@RequestBody Futures futures) {
+    @PostMapping(value="/{playerid}/futures/{code}")
+    public ResponseEntity<Futures> saveFutue(@RequestBody Futures futures, @PathVariable Long playerid, @PathVariable String code) {
+        if(playerService.getPlayer(playerid).getCode().equals(code)){
         return new ResponseEntity<>(futuresService.saveFuture(futures),  HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(futures, HttpStatus.UNAUTHORIZED);
     }
     
     @GetMapping(value="/{playerid}/futures/all")
@@ -164,11 +167,15 @@ public class PlayerController {
         else{
             return new ResponseEntity<>(returned, HttpStatus.UNAUTHORIZED);
         }
-
     }
 
     @PutMapping(value = "/changeTURN/{code}/{turn}")
     public ResponseEntity<HttpStatus> updateTurn(@PathVariable String code, @PathVariable int turn){
         return new ResponseEntity<>(playerService.changeTurn(code,turn));
+    }
+
+    @GetMapping(value = "/turn")
+    public ResponseEntity<Object> getTurn(){
+        return new ResponseEntity<>(playerService.getTurn(),HttpStatus.OK);
     }
 }

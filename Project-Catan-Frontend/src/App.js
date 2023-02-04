@@ -6,6 +6,7 @@ import SignIn from './components/Signin';
 import AbundancesDisplay from './components/AbundancesDisplay'
 import './App.css';
 import AddAbundance from './components/AddAbundance';
+import AddFutures from './components/AddFutures';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/players" element={<PlayerDisplay />}></Route>
         <Route path="/abundances" element={<AbundancesDisplay />}></Route>
         <Route path="/abundanceform" element={<AddAbundance />}></Route>
+        <Route path='/futureform' element={<AddFutures />}></Route>
       </Routes>
     </Router>
   )

@@ -19,4 +19,6 @@ public interface PlayerService {
     int findAdminNumber();
 
     Player getPlayerByName(String name);
+
+    int getTurn();
 }
