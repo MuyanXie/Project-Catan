@@ -26,7 +26,8 @@ const PlayerDisplay = () => {
           </tr>
         </thead>
         <tbody>
-          {players.map((player) => (
+          {players
+          .filter((player) => player.name !== "ADMIN").map((player) => (
             <tr key={player.id}>
               <td>{player.id}</td>
               <td>{player.name}</td>

@@ -42,8 +42,15 @@ const RegisterForm = () => {
             const temp = response.data
             temp.code = formData.password
             if (response.status === 201) {
-                localStorage.setItem("token", JSON.stringify(temp))
-                navigate('/players');
+                if(formData.name === "ADMIN"){
+                  setTimeout(() => {
+                    navigate("/")
+                  }, 2000);
+                }
+                else{
+                  localStorage.setItem("token", JSON.stringify(temp))
+                  navigate('/players');
+                }
             }
           } 
           catch (error) {
