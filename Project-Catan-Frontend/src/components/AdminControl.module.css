@@ -1,0 +1,117 @@
+.info{
+    color: black;
+    display: inline-block;
+    vertical-align: top;
+    background-color: aliceblue;
+    width: 20rem;
+    height: 8rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-radius: 5px;
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.line{
+    text-align: 'center';
+    margin-left: auto;
+    margin-right: auto;
+    width: 52rem ;
+}
+
+.turn{
+    color: black;
+    display: block;
+    background-color: aliceblue;
+    width: 22rem;
+    height: 8rem;
+    margin: auto;
+    border-radius: 5px;
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.words{
+    margin-bottom: 3px;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.bigwords{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+.largewords{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.head {
+    margin-top: 0%;
+    margin-bottom: 5px;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: xx-large;
+    color: rgb(0, 0, 0);
+    padding: 1px;
+    text-align: center;
+  }
+
+
+  .table {
+    font-family: Merriweather;
+    border-collapse: collapse;
+    width: 50%;
+    border-width: 4px;
+    border-color: white;
+    border-style: solid;
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+
+
+  .table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align:center;
+  }
+
+  .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align:center;
+  }
+  
+  .table tr:nth-child(even){background-color: white;}
+  .table tr:nth-child(odd){background-color: #EDF7FF;}
+  
+  .table tr:hover {background-color: #ddd;}
+  
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #263238;
+    color: white;
+    font-size: 20px;
+  }
+
+  .btn{
+    color: rgb(2, 2, 2);
+    font-family: "Lucida Handwriting", cursive;
+    background-color: rgb(135,206,235);
+    border-radius: 5px;
+    font-size: medium;
+    padding: 5px;
+    border: none;
+    margin: 10px auto;
+  }
+
+  .btn:hover {
+    background-color: #97c4d9;
+  }

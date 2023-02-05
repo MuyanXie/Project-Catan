@@ -7,6 +7,7 @@ import AbundancesDisplay from './components/AbundancesDisplay'
 import './App.css';
 import AddAbundance from './components/AddAbundance';
 import AddFutures from './components/AddFutures';
+import AdminControl from './components/AdminControl';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/abundances" element={<AbundancesDisplay />}></Route>
         <Route path="/abundanceform" element={<AddAbundance />}></Route>
         <Route path='/futureform' element={<AddFutures />}></Route>
+        <Route path='/admin' element={<AdminControl />}></Route>
       </Routes>
     </Router>
   )

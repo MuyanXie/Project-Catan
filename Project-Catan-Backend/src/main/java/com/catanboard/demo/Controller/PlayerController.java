@@ -26,6 +26,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.PutMapping;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+
 @CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 @RestController
@@ -177,5 +188,32 @@ public class PlayerController {
     @GetMapping(value = "/turn")
     public ResponseEntity<Object> getTurn(){
         return new ResponseEntity<>(playerService.getTurn(),HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/version")
+    public ResponseEntity<Object> getVersion(){
+        Map<String, String> versionMap = new HashMap<>();
+        try {
+          File pomFile = new File("pom.xml");
+          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+          Document doc = dBuilder.parse(pomFile);
+          doc.getDocumentElement().normalize();
+          NodeList nodes = doc.getElementsByTagName("project");
+          for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+            NodeList children = node.getChildNodes();
+            for (int j = 0; j < children.getLength(); j++) {
+              Node child = children.item(j);
+              if (child.getNodeName().equals("version")) {
+                versionMap.put("version", child.getTextContent());
+                break;
+              }
+            }
+          }
+        } catch (Exception e) {
+          versionMap.put("error", "Failed to read version information from pom.xml");
+        }
+        return new ResponseEntity<>(versionMap, HttpStatus.OK);
     }
 }
