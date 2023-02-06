@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "./AbundancesDisplay.module.css";
+import classes from "./FuturesDisplay.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
