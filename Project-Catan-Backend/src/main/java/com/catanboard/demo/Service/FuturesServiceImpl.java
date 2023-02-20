@@ -110,6 +110,11 @@ public class FuturesServiceImpl implements FuturesService{
         return futuresRepository.save(unwrappedFuture);
     }
 
+    @Override
+    public List<Futures> getAcceptorPendingFutures(String player_id) {
+        return futuresRepository.findByAcceptorIdAndStatus(player_id, -1);
+    }
+
     static Futures unwrapFuture(Optional<Futures> entity, Long id) {
         if (entity.isPresent()) return entity.get();
         else throw new FutureNotFoundException(id);

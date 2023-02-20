@@ -20,4 +20,7 @@ public interface FuturesRepository extends CrudRepository<Futures, Long>{
     List<Futures> findByInitiatorId(@Param("Id") String Id);
 
     
+    @Query(value = "SELECT * FROM FUTURES WHERE acceptor_id = :Id and status = :Status",
+    nativeQuery = true)
+    List<Futures> findByAcceptorIdAndStatus(@Param("Id") String Id, @Param("Status") int Status);
 }

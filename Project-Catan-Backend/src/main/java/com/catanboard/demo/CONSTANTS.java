@@ -1,18 +1,18 @@
 package com.catanboard.demo;
 
 public class CONSTANTS {
-    public int contract_NOE_AUTHORIZED = -1;
+    public int contract_NOT_AUTHORIZED = -1;
     public int contract_READY = 0;
     public int contract_DUE = 1;
     public int contract_EXPIRE = -100;
 
 
-    public int getContract_NOE_AUTHORIZED() {
-        return this.contract_NOE_AUTHORIZED;
+    public int getContract_NOT_AUTHORIZED() {
+        return this.contract_NOT_AUTHORIZED;
     }
 
-    public void setContract_NOE_AUTHORIZED(int contract_NOE_AUTHORIZED) {
-        this.contract_NOE_AUTHORIZED = contract_NOE_AUTHORIZED;
+    public void setContract_NOT_AUTHORIZED(int contract_NOT_AUTHORIZED) {
+        this.contract_NOT_AUTHORIZED = contract_NOT_AUTHORIZED;
     }
 
     public int getContract_READY() {

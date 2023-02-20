@@ -23,7 +23,6 @@
     display: block;
     background-color: aliceblue;
     width: 22rem;
-    height: 8rem;
     margin: auto;
     border-radius: 5px;
     font-family: "Lucida Handwriting", cursive;
@@ -114,4 +113,25 @@
 
   .btn:hover {
     background-color: #97c4d9;
+  }
+
+  .bigbutton {
+    align-items: center;
+    display: block;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    color: #2a2630;
+    border: none;
+    border-radius: 6px;
+    font-size: large;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .bigbutton:hover {
+    background-color: rgb(221, 221, 221);
   }

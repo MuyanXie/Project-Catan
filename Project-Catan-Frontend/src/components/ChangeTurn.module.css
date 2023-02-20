@@ -1,0 +1,112 @@
+.form {
+    position: relative;
+    background-color: #ffffff;
+    padding: 1rem;
+    width: 20rem;
+    margin: 2rem auto;
+    border-radius: 6px;
+    font-family: "Lucida Handwriting", cursive;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-group{
+    display: block;
+  }
+
+  .head {
+    margin-top: 0%;
+    margin-bottom: 5px;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: xx-large;
+    color: rgb(0, 0, 0);
+    padding: 1px;
+  }
+
+  .head2 {
+    margin-top: 0%;
+    margin-bottom: 5px;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    padding: 1px;
+  }
+
+.label{
+    display: block;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    font-family: "Lucida Handwriting", cursive;
+  }
+   
+  .input{
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+    
+  }
+  .btn{
+    color: rgb(2, 2, 2);
+    font-family: "Lucida Handwriting", cursive;
+    background-color: rgb(135,206,235);
+    border-radius: 5px;
+    font-size: medium;
+    padding: 5px;
+    border: none;
+    margin: 10px auto;
+  }
+
+  .btn:hover {
+    background-color: #97c4d9;
+  }
+   
+  .backbtn{
+    color: rgb(2, 2, 2);
+    font-family: "Lucida Handwriting", cursive;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: smaller;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .backbtn:hover {
+    font-size: small;
+  }
+
+  .messages{
+    display: block;
+    padding: 5px;
+    font-family: "Lucida Handwriting", cursive;
+    justify-content: center;
+  }
+
+  .error{
+    display: block;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: xx-small;
+    color: rgb(233, 181, 69);
+    width: fit-content;
+    height: 1px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+   
