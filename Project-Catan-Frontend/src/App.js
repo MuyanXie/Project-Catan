@@ -8,6 +8,8 @@ import './App.css';
 import AddAbundance from './components/AddAbundance';
 import AddFutures from './components/AddFutures';
 import AdminControl from './components/AdminControl';
+import FuturesDisplay from './components/FuturesDisplay';
+import ChangeTurn from './components/ChangeTurn';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/abundanceform" element={<AddAbundance />}></Route>
         <Route path='/futureform' element={<AddFutures />}></Route>
         <Route path='/admin' element={<AdminControl />}></Route>
+        <Route path='/futures' element={<FuturesDisplay />}></Route>
+        <Route path='/changeturn' element={<ChangeTurn />}></Route>
       </Routes>
     </Router>
   )

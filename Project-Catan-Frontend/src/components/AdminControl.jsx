@@ -6,7 +6,7 @@
  * 3. Update/Delete Futures Contract Information
  * 4. Update/Delete Options Contract Information
  * 5. Delete Abundance
- * 6. Change Turn/ Progress the game to the next turn
+ * 6. Realized: Change Turn/ Progress the game to the next turn
  * 7. Change Status of Futures/Options Contract
  * 8. Realized: Display the current Turn in prominent position
  * 9. Realized: Provide current Version Information
@@ -17,8 +17,10 @@ import React, { useState, useEffect } from 'react';
 import packageJson from '/Users/apple/Desktop/Project Catan/Project-Catan-Frontend/package.json';
 import Header from "./Header";
 import classes from "./AdminControl.module.css";
+import { useNavigate } from "react-router-dom";
 
 const AdminControl = () => {
+  const navigate = useNavigate();
     const [curturn, setCurturn] = useState([]);
     const [backendversion, setBackendversion] = useState([]);
     const [connectionissue, setConnectionissue] = useState([]);
@@ -62,15 +64,11 @@ const AdminControl = () => {
     <div className={classes.turn}>
         <h2 className={classes.head}>Current Turn</h2>
         <p className={classes.largewords}>{curturn}</p>
+        <button onClick={() => navigate(`/changeturn?curturn=${curturn}`)} className={classes.bigbutton} >Change Turn!</button>
+        <br></br>
     </div>
     <br></br>
     <br></br>
-
-
-
-
-
-
     <div className={classes.line}>
     <div className={classes.info}>
     <h2 className={classes.head}>Version Information</h2>

@@ -132,7 +132,12 @@ public class PlayerController {
     public ResponseEntity<Futures> getFuture(@PathVariable Long futureid) {
         return new ResponseEntity<>(futuresService.getFuture(futureid), HttpStatus.OK);
     }
-    
+
+    @GetMapping(value="/{playerid}/futures/pending")
+    public ResponseEntity<List<Futures>> getPlayerPendingFutures(@PathVariable String playerid) {
+        return new ResponseEntity<>(futuresService.getAcceptorPendingFutures(playerid), HttpStatus.OK);
+    }
+
     @DeleteMapping(value = "/{playerid}/futures/{futureid}")
     public ResponseEntity<HttpStatus> deleteFuture(@PathVariable Long futureid) {
         futuresService.deleteFuture(futureid);
