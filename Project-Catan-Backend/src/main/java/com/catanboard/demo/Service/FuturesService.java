@@ -27,4 +27,8 @@ public interface FuturesService{
     Futures updateFutureStatus(Long futureId, int status, String code);
 
     List<Futures> getAcceptorPendingFutures(String player_id);
+
+    List<Futures> getInitiatorProposedFutures(String player_id);
+
+    List<Futures> getInitiatorActiveFutures(String player_id);
 }

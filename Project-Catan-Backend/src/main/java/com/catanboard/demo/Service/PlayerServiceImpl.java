@@ -59,10 +59,10 @@ public class PlayerServiceImpl implements PlayerService{
     public HttpStatus changeTurn(String code, int turn) {
         if(code.equals(playerRepository.findByName("ADMIN").getCode())){
             for(Futures cur :futuresRepository.findAll()){
-                if(cur.getActiveTurn() == turn){
+                if(cur.getActiveTurn() == turn && cur.getStatus() == 0){
                     cur.setStatus(1);
                 }
-                else if(cur.getActiveTurn() > turn){
+                else if(cur.getActiveTurn() < turn){
                     cur.setStatus(-100);
                 }
                 futuresRepository.save(cur);
