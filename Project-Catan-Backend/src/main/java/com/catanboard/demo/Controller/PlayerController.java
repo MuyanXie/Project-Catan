@@ -138,6 +138,16 @@ public class PlayerController {
         return new ResponseEntity<>(futuresService.getAcceptorPendingFutures(playerid), HttpStatus.OK);
     }
 
+    @GetMapping(value="/{playerid}/futures/proposed")
+    public ResponseEntity<List<Futures>> getPlayerProposedFutures(@PathVariable String playerid) {
+        return new ResponseEntity<>(futuresService.getInitiatorProposedFutures(playerid), HttpStatus.OK);
+    }
+
+    @GetMapping(value="/{playerid}/futures/active")
+    public ResponseEntity<List<Futures>> getPlayerActiveFutures(@PathVariable String playerid) {
+        return new ResponseEntity<>(futuresService.getInitiatorActiveFutures(playerid), HttpStatus.OK);
+    }
+
     @DeleteMapping(value = "/{playerid}/futures/{futureid}")
     public ResponseEntity<HttpStatus> deleteFuture(@PathVariable Long futureid) {
         futuresService.deleteFuture(futureid);

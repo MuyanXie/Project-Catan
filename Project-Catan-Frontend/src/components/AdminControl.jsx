@@ -3,13 +3,12 @@
  * Implemented Methods:
  * 1. Realized: Test Connections
  * 2. Delete Player
- * 3. Update/Delete Futures Contract Information
- * 4. Update/Delete Options Contract Information
+ * 3. Update/Delete Futures Contract Information (including changing the status)
+ * 4. Update/Delete Options Contract Information (including changing the status)
  * 5. Delete Abundance
  * 6. Realized: Change Turn/ Progress the game to the next turn
- * 7. Change Status of Futures/Options Contract
- * 8. Realized: Display the current Turn in prominent position
- * 9. Realized: Provide current Version Information
+ * 7. Realized: Display the current Turn in prominent position
+ * 8. Realized: Provide current Version Information
  */
 
 

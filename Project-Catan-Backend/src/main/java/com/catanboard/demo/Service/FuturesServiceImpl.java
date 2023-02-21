@@ -120,4 +120,13 @@ public class FuturesServiceImpl implements FuturesService{
         else throw new FutureNotFoundException(id);
     }
 
+    @Override
+    public List<Futures> getInitiatorProposedFutures(String player_id) {
+        return futuresRepository.findByInitiatorIdAndStatus(player_id, -1);
+    }
+
+    @Override
+    public List<Futures> getInitiatorActiveFutures(String player_id) {
+        return futuresRepository.findByInitiatorIdAndStatus(player_id, 1);
+    }
 }
