@@ -2,15 +2,13 @@
  * Admin control class is used to provide supreme control over the game;
  * Implemented Methods:
  * 1. Realized: Test Connections
- * 2. Delete Player
- * 3. Update/Delete Futures Contract Information (including changing the status)
- * 4. Update/Delete Options Contract Information (including changing the status)
- * 5. Delete Abundance
- * 6. Realized: Change Turn/ Progress the game to the next turn
- * 7. Realized: Display the current Turn in prominent position
- * 8. Realized: Provide current Version Information
+ * 2. Realized: Delete Player
+ * 3. Realized: Update/Delete Futures Contract Information (including changing the status)
+ * 4. Realized: Delete Abundance
+ * 5. Realized: Change Turn/ Progress the game to the next turn
+ * 6. Realized: Display the current Turn in prominent position
+ * 7. Realized: Provide current Version Information
  */
-
 
 import React, { useState, useEffect } from 'react';
 import packageJson from '/Users/apple/Desktop/Project Catan/Project-Catan-Frontend/package.json';
@@ -23,7 +21,15 @@ const AdminControl = () => {
     const [curturn, setCurturn] = useState([]);
     const [backendversion, setBackendversion] = useState([]);
     const [connectionissue, setConnectionissue] = useState([]);
-    const [players, setPlayers] = useState([]);
+    const [allPlayerFutures, setAllPlayerFutures] = useState([]);
+
+    const handleUpdate = (needUpdateFutures) => {
+      navigate("/updatefutures", {state : {needUpdateFutures}});
+    }
+
+    const handleDelete = (needDeleteFutures) => {
+      navigate(`/deletefuture?futureid=${needDeleteFutures.id}`);
+    }
 
     useEffect(() => {
         const fetchVersion = async () => {
@@ -37,6 +43,13 @@ const AdminControl = () => {
             setBackendversion(null)
             setConnectionissue(data.error)
           }
+        
+        };
+
+        const fetchAllPlayerFutures = async () => {
+          const response = await fetch(`http://localhost:8080/futures/all`);
+          const data = await response.json();
+          setAllPlayerFutures(data);
         };
 
         const fetchCurturn = async () => {
@@ -45,29 +58,39 @@ const AdminControl = () => {
             setCurturn(data);
           };
 
-          const fetchAllPlayers = async () => {
-            const response = await fetch('http://localhost:8080/player/all');
-            const data = await response.json();
-            setPlayers(data);
-          };
-
         fetchVersion();
         fetchCurturn();
-        fetchAllPlayers();
+        fetchAllPlayerFutures();
+
       }, []);
 
   return (
     <>
     <Header title="Admin Panel" />
 
+    <div className={classes.line}>
     <div className={classes.turn}>
         <h2 className={classes.head}>Current Turn</h2>
         <p className={classes.largewords}>{curturn}</p>
         <button onClick={() => navigate(`/changeturn?curturn=${curturn}`)} className={classes.bigbutton} >Change Turn!</button>
         <br></br>
     </div>
+
+    <div className={classes.operations}>
+        <h2 className={classes.head}>Operations</h2>
+        <button onClick={() => navigate(`/deleteplayer`)} className={classes.bigbutton} >Delete Player!?</button>
+        <br></br>
+        <button onClick={() => navigate(`/deleteabundance`)} className={classes.bigbutton} >Delete Abundances!?</button>
+    </div>
+
+
+    </div>
+
+
+
     <br></br>
     <br></br>
+
     <div className={classes.line}>
     <div className={classes.info}>
     <h2 className={classes.head}>Version Information</h2>
@@ -90,6 +113,46 @@ const AdminControl = () => {
       )}
     </div>
     </div>
+
+    <div>
+        <h2 className={classes.header}>All Future Trades</h2>
+      <table className = {classes.table}>
+        <thead>
+          <tr>
+            <th >Trade ID</th>
+            <th >Acceptor Collateral</th>
+            <th >Acceptor ID</th>
+            <th >Acceptor Items</th>
+            <th >Initiator Collateral</th>
+            <th >Initiator ID</th>
+            <th >Initiator Items</th>
+            <th >Active Turn</th>
+            <th>Operations...</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allPlayerFutures.map((futures) => (
+            <tr key={futures.id}>
+              <td>{futures.id}</td>
+              <td>{futures.acceptorCollateral}</td>
+              <td>{futures.acceptorId}</td>
+              <td>{futures.acceptorItems}</td>
+              <td>{futures.initiatorCollateral}</td>
+              <td>{futures.initiatorId}</td>
+              <td>{futures.initiatorItems}</td>
+              <td>{futures.activeTurn}</td>
+              <td>
+                <button onClick={() => handleUpdate(futures)} className={classes.button}>Update</button>
+                <button onClick={() => handleDelete(futures)} className={classes.button}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+
+
     </>
   );
 }

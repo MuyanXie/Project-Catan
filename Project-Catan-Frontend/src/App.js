@@ -10,6 +10,10 @@ import AddFutures from './components/AddFutures';
 import AdminControl from './components/AdminControl';
 import FuturesDisplay from './components/FuturesDisplay';
 import ChangeTurn from './components/ChangeTurn';
+import UpdateFutures from './components/UpdateFutures';
+import DeletePlayer from './components/DeletePlayer';
+import DeleteAbundance from './components/DeleteAbundance';
+import DeleteFuture from './components/DeleteFuture';
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
         <Route path='/admin' element={<AdminControl />}></Route>
         <Route path='/futures' element={<FuturesDisplay />}></Route>
         <Route path='/changeturn' element={<ChangeTurn />}></Route>
+        <Route path='/updatefutures' element={<UpdateFutures />}></Route>
+        <Route path='/deleteplayer' element={<DeletePlayer />}></Route>
+        <Route path='/deleteabundance' element={<DeleteAbundance />}></Route>
+        <Route path='/deletefuture' element={<DeleteFuture />}></Route>
       </Routes>
     </Router>
   )

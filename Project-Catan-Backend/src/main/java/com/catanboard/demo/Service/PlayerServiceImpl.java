@@ -41,8 +41,13 @@ public class PlayerServiceImpl implements PlayerService{
     }
 
     @Override
-    public void deletePlayer(Long id) {
-        playerRepository.deleteById(id);
+    public HttpStatus deletePlayer(Long id, String code) {
+        boolean flag = code.equals(playerRepository.findByName("ADMIN").getCode());
+        if(flag){
+            playerRepository.deleteById(id);
+            return HttpStatus.ACCEPTED;
+        }
+        return HttpStatus.UNAUTHORIZED;
     }
 
     @Override
