@@ -22,6 +22,15 @@
     padding: 1px;
   }
 
+  .head2 {
+    margin-top: 0%;
+    margin-bottom: 5px;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    padding: 1px;
+  }
+
 .label{
     display: block;
     font-size: medium;
@@ -31,7 +40,8 @@
   }
    
   .input{
-    font-size: medium;
+    font-size: larger;
+    padding: 5px;
     margin: 2px;
     
   }

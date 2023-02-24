@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.catanboard.demo.POJO.Futures;
 
+import org.springframework.http.HttpStatus;
+
 public interface FuturesService{
 
     Futures getFuture(Long futureId);    
@@ -13,7 +15,7 @@ public interface FuturesService{
 
     Futures saveFuture(Futures future);
 
-    void deleteFuture(Long id);
+    HttpStatus deleteFuture(Long id, String code);
 
     Futures updateFutureAcceptor(Long futureId, String acceptorId);
     Futures updateFutureInitiator(Long futureId, String initiatorId);
@@ -31,4 +33,6 @@ public interface FuturesService{
     List<Futures> getInitiatorProposedFutures(String player_id);
 
     List<Futures> getInitiatorActiveFutures(String player_id);
+
+    HttpStatus generalUpdateFutures(Long futureId, Futures future, String authorizationCode);
 }

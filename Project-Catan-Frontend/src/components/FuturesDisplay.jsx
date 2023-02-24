@@ -16,6 +16,7 @@ import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 const FuturesDisplay = () => {
   const navigate = useNavigate();
   const [allNeedAuthorizeFutures, setAllNeedAuthorizeFutures] = useState([]);
@@ -23,6 +24,7 @@ const FuturesDisplay = () => {
   const [allActiveFutures, setAllActiveFutures] = useState([]);
   const [playerFutures, setPlayerFutures] = useState([]);
   const [allPlayerFutures, setAllPlayerFutures] = useState([]);
+
 
   const fetchAllNeedAuthorizeFutures = async () => {
     const id = JSON.parse(localStorage.getItem("token")).id;

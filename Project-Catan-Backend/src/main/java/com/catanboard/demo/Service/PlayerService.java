@@ -9,7 +9,7 @@ import com.catanboard.demo.POJO.Player;
 public interface PlayerService {
     Player getPlayer(Long id);
     Player savePlayer(Player player);
-    void deletePlayer(Long id);
+    HttpStatus deletePlayer(Long id, String code);
     List<Player> getPlayers();
 
     HttpStatus changeTurn(String code, int turn);   

@@ -57,10 +57,10 @@ public class PlayerController {
         return new ResponseEntity<>(playerService.getPlayer(id), HttpStatus.OK);
     }
     
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<HttpStatus> deletePlayer(@PathVariable Long id) {
-        playerService.deletePlayer(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @DeleteMapping(value = "/{id}/{code}")
+    public ResponseEntity<HttpStatus> deletePlayer(@PathVariable Long id, @PathVariable String code) {
+        return new ResponseEntity<>(playerService.deletePlayer(id, code));
+
     }
 
     @PostMapping
@@ -148,10 +148,9 @@ public class PlayerController {
         return new ResponseEntity<>(futuresService.getInitiatorActiveFutures(playerid), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{playerid}/futures/{futureid}")
-    public ResponseEntity<HttpStatus> deleteFuture(@PathVariable Long futureid) {
-        futuresService.deleteFuture(futureid);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @DeleteMapping(value = "/{playerid}/futures/{futureid}/{code}")
+    public ResponseEntity<HttpStatus> deleteFuture(@PathVariable Long futureid, @PathVariable String code) {
+        return new ResponseEntity<>(futuresService.deleteFuture(futureid, code));
     }
 
     @PutMapping(value="/{playerid}/futures/{futureid}/updateFA")
@@ -193,6 +192,11 @@ public class PlayerController {
         else{
             return new ResponseEntity<>(returned, HttpStatus.UNAUTHORIZED);
         }
+    }
+
+    @PutMapping(value="/{playerid}/futures/{futureId}/generalupdatefutures/{authorizationCode}")
+    public ResponseEntity<HttpStatus> generalupdatefutures(@RequestBody Futures future, @PathVariable Long futureId, @PathVariable String authorizationCode) {
+        return new ResponseEntity<>(futuresService.generalUpdateFutures(futureId, future, authorizationCode));
     }
 
     @PutMapping(value = "/changeTURN/{code}/{turn}")

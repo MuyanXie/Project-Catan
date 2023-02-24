@@ -11,6 +11,8 @@ import com.catanboard.demo.POJO.Futures;
 import com.catanboard.demo.Repository.FuturesRepository;
 import com.catanboard.demo.Repository.PlayerRepository;
 
+import org.springframework.http.HttpStatus;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -42,8 +44,14 @@ public class FuturesServiceImpl implements FuturesService{
     }
 
     @Override
-    public void deleteFuture(Long id) {
-        futuresRepository.deleteById(id);  
+    public HttpStatus deleteFuture(Long id, String code) {
+        if(code.equals(playerRepository.findByName("ADMIN").getCode())){
+            futuresRepository.deleteById(id);
+            return HttpStatus.OK;
+        }
+        else{
+            return HttpStatus.UNAUTHORIZED;
+        }
     }
 
     @Override
@@ -128,5 +136,16 @@ public class FuturesServiceImpl implements FuturesService{
     @Override
     public List<Futures> getInitiatorActiveFutures(String player_id) {
         return futuresRepository.findByInitiatorIdAndStatus(player_id, 1);
+    }
+
+    @Override
+    public HttpStatus generalUpdateFutures(Long futureId, Futures future, String authorizationCode){
+        if(authorizationCode.equals(playerRepository.findByName("ADMIN").getCode())){
+            futuresRepository.save(future);
+            return HttpStatus.OK;
+        }
+        else{
+            return HttpStatus.UNAUTHORIZED;
+        }
     }
 }
