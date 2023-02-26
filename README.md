@@ -44,7 +44,7 @@ npm start # launching the frontend
 Opening your brower, you will be able to see the home page at http://localhost:3000/
 
 ## Using the Website:
-![register](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png) | ![signin](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png)
+![register](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png) ![signin](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png)
 
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
