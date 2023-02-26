@@ -46,11 +46,11 @@ Opening your brower, you will be able to see the home page at http://localhost:3
 ## Using the Website:
 Click participate, you will be promoted to the register page. You can register a new user or sign in with an existing user. After signing in, you will be able to see the home page of the platform.
 <p>
-  <img src="Pictures/Register.png" width="50%" height = "600" style="display: block; margin: 0 auto"/>
+  <img src="Pictures/Register.png#center" width="50%" height = "600" style="display: block; margin: 0 auto"/>
 </p>
 
 <p>
-  <img src="Pictures/Signin.png" width="50%" height = "500" style="display: block; margin: 0 auto" /> 
+  <img src="Pictures/Signin.png#center" width="50%" height = "500" style="display: block; margin: 0 auto" /> 
 </p>
 
 ## REST API Documentation:
