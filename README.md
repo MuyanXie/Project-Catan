@@ -44,7 +44,7 @@ npm start # launching the frontend
 Opening your brower, you will be able to see the home page at http://localhost:3000/
 
 ## Using the Website:
-
+Click participate, you will be promoted to the register page. You can register a new user or sign in with an existing user. After signing in, you will be able to see the home page of the platform.
 <p>
   <img src="Pictures/Register.png" width="50%" height = "600" style="display: block; margin: 0 auto"/>
 </p>
@@ -52,6 +52,7 @@ Opening your brower, you will be able to see the home page at http://localhost:3
 <p>
   <img src="Pictures/Signin.png" width="50%" height = "500" style="display: block; margin: 0 auto" /> 
 </p>
+
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
 
