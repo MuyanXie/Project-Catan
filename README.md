@@ -46,6 +46,11 @@ Opening your brower, you will be able to see the home page at http://localhost:3
 ## Using the Website:
 ![register](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png) ![signin](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png)
 
+<p float="left">
+  <img src="https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png" width="100" />
+  <img src="https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png" width="100" /> 
+</p>
+
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
 
