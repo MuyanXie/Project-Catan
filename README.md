@@ -1,5 +1,5 @@
 # Project Catan
-![image text](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/CTS.png)
+![CTS](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/CTS.png)
 
 This project aims to promote an online room trading platform for the Catan Table games. Originally, within the game, the only trading mode is face-to-face instant trades. This platform tries to integrate more refined financial trading deals, such as Futures and Options, among the five resources: Lumber, Wool, Grain, Brick, Ore.
 
@@ -24,7 +24,7 @@ __Contract Exchange and Update__:
 
 Based on timed results, Catan Board Game with the financial complexs implemented would have the play time shortened from up to 90 min to a bare 50 min on average with the help of this platform in tracking futures and options trade.
 
-## Install the platform:
+## Installing the platform:
 Make sure you have Maven and NPM installed on your local computer. Before running the following command:
 
 ```
@@ -37,9 +37,9 @@ npm start # launching the frontend
 ```
 
 Opening your brower, you will be able to see the home page at http://localhost:3000/
-## Examplary Trade in Project Catan:
+## Examplary Trade in Catan Trading System:
 
-## Front End Outlook:
+## Using the Website:
 
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
