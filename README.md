@@ -46,9 +46,9 @@ Opening your brower, you will be able to see the home page at http://localhost:3
 ## Using the Website:
 ![register](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png) ![signin](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png)
 
-<p float="left">
-  <img src="https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png" width="100" />
-  <img src="https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png" width="100" /> 
+<p float="middle">
+  <img src="Pictures/Register.png" width="100" height = "170"/>
+  <img src="Pictures/Signin.png" width="100" height = "170"/> 
 </p>
 
 ## REST API Documentation:
