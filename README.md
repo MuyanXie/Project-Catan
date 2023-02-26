@@ -1,5 +1,5 @@
 # Project Catan
-![CTS](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/CTS.png)
+![CTS](Pictures/CTS.png)
 
 This project aims to promote an online room trading platform for the Catan Table games. Originally, within the game, the only trading mode is face-to-face instant trades. This platform tries to integrate more refined financial trading deals, such as Futures and Options, among the five resources: Lumber, Wool, Grain, Brick, Ore.
 
@@ -44,13 +44,14 @@ npm start # launching the frontend
 Opening your brower, you will be able to see the home page at http://localhost:3000/
 
 ## Using the Website:
-![register](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Register.png) ![signin](https://github.com/MuyanXie/ProjectCatan/blob/main/Pictures/Signin.png)
 
-<p float="middle">
-  <img src="Pictures/Register.png" width="100" height = "170"/>
-  <img src="Pictures/Signin.png" width="100" height = "170"/> 
+<p>
+  <img src="Pictures/Register.png" width="50%" height = "400" style = "margin : auto"/>
 </p>
 
+<p>
+  <img src="Pictures/Signin.png" width="50%" height = "300"/> 
+</p>
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
 
