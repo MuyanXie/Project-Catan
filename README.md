@@ -21,6 +21,11 @@ __Futures Contract__: Each contract consists of 9 elements: Contract ID, Initiat
 __Options Contract__:
 
 __Contract Exchange and Update__:
+To perform contract exchange, the initiator of the contract will first post the contract to the platform. The platform will then check if the contract is valid. If the contract is valid, the contract request would be sent to the intended aceptor. The aceptor would then have the option to accept or reject the contract. If the contract is accepted, the contract would be updated to the database and the initiator and aceptor would be notified. If the contract is rejected, the contract would be deleted from the database and the initiator and aceptor would be notified.
+
+To sell a contract, the initiator will need to post another contract that acts like a counter of the previous contract. If the proposal is accepted, the seller would be able to reach a balance and thus need not to pay the original amount.
+
+Finally, an ADMIN panel is provided to the platform to check the status of all the contracts and to update the status of the contracts. The ADMIN panel is only accessible to the ADMIN user. The ADMIN user is the one who is responsible for the platform and is the only one who can create the ADMIN user. The ADMIN user is also the only one who can delete the ADMIN user. The ADMIN user is also the only one who can delete the contracts. The ADMIN user is also the only one who can delete the users. The ADMIN user is also the only one who can delete the Abundances.
 
 Based on timed results, Catan Board Game with the financial complexs implemented would have the play time shortened from up to 90 min to a bare 50 min on average with the help of this platform in tracking futures and options trade.
 
