@@ -53,6 +53,12 @@ Click participate, you will be promoted to the register page. You can register a
   <img src="Pictures/Signin.png#center" width="50%" height = "500" style="display: block; margin: 0 auto" /> 
 </p>
 
+After signing into your own account, you will be able to see the home page of the platform; You will see a page with all the players displayed:
+
+__Picture Placeholder__
+
+ <ins>Abundances</ins>
+
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
 
