@@ -38,6 +38,7 @@ cd Project-Catan-Backend
 mvn clean spring-boot:run # launching the backend
 cd ..
 cd Project-Catan-Frontend
+npm install
 npm start # launching the frontend
 ```
 
