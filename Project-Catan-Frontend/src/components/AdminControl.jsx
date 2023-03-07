@@ -11,7 +11,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import packageJson from '/Users/apple/Desktop/Project Catan/Project-Catan-Frontend/package.json';
+import packageJson from '../../package.json';
 import Header from "./Header";
 import classes from "./AdminControl.module.css";
 import { useNavigate } from "react-router-dom";
