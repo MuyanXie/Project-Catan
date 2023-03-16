@@ -45,6 +45,8 @@ npm start # launching the frontend
 Opening your brower, you will be able to see the home page at http://localhost:3000/
 
 ## Using the Website:
+ <ins>Registration and Signin:</ins>
+
 Click participate, you will be promoted to the register page. You can register a new user or sign in with an existing user. After signing in, you will be able to see the home page of the platform:
 <p>
   <img src="Pictures/Register.png#center" width="50%" height = "600" style="display: block; margin: 0 auto"/>
@@ -54,11 +56,42 @@ Click participate, you will be promoted to the register page. You can register a
   <img src="Pictures/Signin.png#center" width="50%" height = "500" style="display: block; margin: 0 auto" /> 
 </p>
 
+ <ins>Players:</ins>
+
 After signing into your own account, you will be able to see the home page of the platform; You will see a page with all the players displayed:
 
-__Picture Placeholder__
+<p>
+  <img src="Pictures/Players.png#center" width="100%" height = "160%" style="display: block; margin: 0 auto" /> 
+</p>
 
- <ins>Abundances</ins>
+ <ins>Abundances:</ins>
+
+Just as described above, Abundances are the items that a player is willing to sell/trade. You can create or delete your own Abundance at any time. Also, a real time interface is provided to show all the Abundances of all the players to give all the players a sense of distribution of resources on the table. A REST API is designed to fulfill the get, create and delete operation of the database for Abundance.
+ <p>
+  <img src="Pictures/Abundances.png#center" width="100%" height = "160%" style="display: block; margin: 0 auto" /> 
+</p>
+
+  <ins>Futures:</ins>
+
+  Futures are the contracts that a player is willing to sell/trade. You can create or delete your own Futures at any time. Also, a real time interface is provided to show all the Futures of all the players to give all the players a sense of distribution of resources on the table. A REST API is designed to fulfill the get, create and delete operation of the database for Futures.
+
+ <p>
+  <img src="Pictures/Futures.png#center" width="100%" height = "160%" style="display: block; margin: 0 auto" /> 
+</p>
+
+  Also, a page is added to fulfill the function of adding a future contract with a certain player.
+
+ <p>
+  <img src="Pictures/AddFutures.png#center" width="100%" height = "160%" style="display: block; margin: 0 auto" /> 
+</p>
+
+<ins>Admin Panel</ins>:
+
+The Admin Panel is only accessible to the ADMIN user. The ADMIN user is the one who is responsible for the platform and is the only one who can create the ADMIN user. The ADMIN user is also the only one who can delete the ADMIN user. The ADMIN user is also the only one who can delete all the contracts. The ADMIN user is also the only one who can delete all the users. The ADMIN user is also the only one who can delete all the Abundances.
+
+ <p>
+  <img src="Pictures/Admin.png#center" width="100%" height = "160%" style="display: block; margin: 0 auto" /> 
+</p>
 
 ## REST API Documentation:
 A Maven repository dependency *Open Api Documentation* has been embeded into pom.xml file in the Spring Boot Backend. You can access the api documentation file easily at http://localhost:8080/swagger-ui/index.html after launching the backend in local environment.
