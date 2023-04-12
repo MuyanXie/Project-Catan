@@ -15,6 +15,7 @@ import classes from "./FuturesDisplay.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api_url from "../config/config.js";
 
 
 const FuturesDisplay = () => {
@@ -28,34 +29,34 @@ const FuturesDisplay = () => {
 
   const fetchAllNeedAuthorizeFutures = async () => {
     const id = JSON.parse(localStorage.getItem("token")).id;
-    const response = await fetch(`http://localhost:8080/player/${id}/futures/pending`);
+    const response = await fetch(`${api_url}/player/${id}/futures/pending`);
     const data = await response.json();
     setAllNeedAuthorizeFutures(data);
   };
 
   const fetchAllProposingFutures = async () => {
     const id = JSON.parse(localStorage.getItem("token")).id;
-    const response = await fetch(`http://localhost:8080/player/${id}/futures/proposed`);
+    const response = await fetch(`${api_url}/player/${id}/futures/proposed`);
     const data = await response.json();
     setAllProposingFutures(data);
   };
 
   const fetchAllActiveFutures = async () => {
     const id = JSON.parse(localStorage.getItem("token")).id;
-    const response = await fetch(`http://localhost:8080/player/${id}/futures/active`);
+    const response = await fetch(`${api_url}/player/${id}/futures/active`);
     const data = await response.json();
     setAllActiveFutures(data);
   };
 
   const fetchPlayerFutures = async () => {
     const id = JSON.parse(localStorage.getItem("token")).id;
-    const response = await fetch(`http://localhost:8080/player/${id}/futures/all`);
+    const response = await fetch(`${api_url}/player/${id}/futures/all`);
     const data = await response.json();
     setPlayerFutures(data);
   };
 
   const fetchAllPlayerFutures = async () => {
-    const response = await fetch(`http://localhost:8080/futures/all`);
+    const response = await fetch(`${api_url}/futures/all`);
     const data = await response.json();
     setAllPlayerFutures(data);
   };
@@ -66,7 +67,7 @@ const FuturesDisplay = () => {
     const code = JSON.parse(localStorage.getItem("token")).code;
     const updatedRow = { ...row, status: "0" };
     axios
-    .put(`http://localhost:8080/player/${playerId}/futures/${row.id}/updateSTATUS/${code}`, updatedRow)
+    .put(`${api_url}/player/${playerId}/futures/${row.id}/updateSTATUS/${code}`, updatedRow)
     .then((response) => {
       fetchAllNeedAuthorizeFutures();
       fetchAllProposingFutures();
@@ -84,7 +85,7 @@ const FuturesDisplay = () => {
   const handleNotAuthorize = (row) => {
     const playerId = JSON.parse(localStorage.getItem("token")).id;
     axios
-    .delete(`http://localhost:8080/player/${playerId}/futures/${row.id}`)
+    .delete(`${api_url}/player/${playerId}/futures/${row.id}`)
     .then((response) => {
       fetchAllNeedAuthorizeFutures();
       fetchAllProposingFutures();
@@ -102,34 +103,34 @@ const FuturesDisplay = () => {
   useEffect(() => {
     const fetchAllNeedAuthorizeFutures = async () => {
         const id = JSON.parse(localStorage.getItem("token")).id;
-        const response = await fetch(`http://localhost:8080/player/${id}/futures/pending`);
+        const response = await fetch(`${api_url}/player/${id}/futures/pending`);
         const data = await response.json();
         setAllNeedAuthorizeFutures(data);
       };
 
     const fetchAllProposingFutures = async () => {
         const id = JSON.parse(localStorage.getItem("token")).id;
-        const response = await fetch(`http://localhost:8080/player/${id}/futures/proposed`);
+        const response = await fetch(`${api_url}/player/${id}/futures/proposed`);
         const data = await response.json();
         setAllProposingFutures(data);
       };
 
     const fetchAllActiveFutures = async () => {
         const id = JSON.parse(localStorage.getItem("token")).id;
-        const response = await fetch(`http://localhost:8080/player/${id}/futures/active`);
+        const response = await fetch(`${api_url}/player/${id}/futures/active`);
         const data = await response.json();
         setAllActiveFutures(data);
       };
     
     const fetchPlayerFutures = async () => {
         const id = JSON.parse(localStorage.getItem("token")).id;
-        const response = await fetch(`http://localhost:8080/player/${id}/futures/all`);
+        const response = await fetch(`${api_url}/player/${id}/futures/all`);
         const data = await response.json();
         setPlayerFutures(data);
       };
 
     const fetchAllPlayerFutures = async () => {
-        const response = await fetch(`http://localhost:8080/futures/all`);
+        const response = await fetch(`${api_url}/futures/all`);
         const data = await response.json();
         setAllPlayerFutures(data);
       };

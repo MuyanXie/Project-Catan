@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import classes from "./PlayerDisplay.module.css";
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const PlayerDisplay = () => {
   const [players, setPlayers] = useState([]);
 
 
   useEffect(() => {
-    fetch('http://localhost:8080/player/all')
+    fetch(`${api_url}/player/all`)
       .then((res) => res.json())
       .then((data) => {
         setPlayers(data);

@@ -3,6 +3,7 @@ import classes from "./AbundancesDisplay.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api_url from "../config/config.js";
 
 const AbundancesDisplay = () => {
   const navigate = useNavigate();
@@ -14,19 +15,19 @@ const AbundancesDisplay = () => {
     
     const fetchPlayerAbundances = async () => {
       const id = JSON.parse(localStorage.getItem("token")).id;
-      const response = await fetch(`http://localhost:8080/player/${id}/abundances`);
+      const response = await fetch(`${api_url}/player/${id}/abundances`);
       const data = await response.json();
       setPlayerAbundances(data);
     };
 
     const fetchAllAbundancesData = async () => {
-      const response = await fetch('http://localhost:8080/abundances/all');
+      const response = await fetch(`${api_url}/abundances/all`);
       const data = await response.json();
       setAllAbundances(data);
     };
 
     axios
-      .delete(`http://localhost:8080/player/${playerId}/abundances/${id}`)
+      .delete(`${api_url}/player/${playerId}/abundances/${id}`)
       .then((response) => {
         fetchPlayerAbundances();
         fetchAllAbundancesData();
@@ -40,7 +41,7 @@ const AbundancesDisplay = () => {
 
   useEffect(() => {
     const fetchAllAbundancesData = async () => {
-        const response = await fetch('http://localhost:8080/abundances/all');
+        const response = await fetch(`${api_url}/abundances/all`);
         const data = await response.json();
         setAllAbundances(data);
       };
@@ -48,7 +49,7 @@ const AbundancesDisplay = () => {
 
     const fetchPlayerAbundances = async () => {
         const id = JSON.parse(localStorage.getItem("token")).id;
-        const response = await fetch(`http://localhost:8080/player/${id}/abundances`);
+        const response = await fetch(`${api_url}/player/${id}/abundances`);
         const data = await response.json();
         setPlayerAbundances(data);
       };

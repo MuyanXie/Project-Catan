@@ -15,6 +15,7 @@ import packageJson from '../../package.json';
 import Header from "./Header";
 import classes from "./AdminControl.module.css";
 import { useNavigate } from "react-router-dom";
+import api_url from "../config/config.js";
 
 const AdminControl = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const AdminControl = () => {
 
     useEffect(() => {
         const fetchVersion = async () => {
-          const response = await fetch('http://localhost:8080/player/version');
+          const response = await fetch(`${api_url}/player/version`);
           const data = await response.json();
           if(data.hasOwnProperty('version')){
             setBackendversion(data);
@@ -47,13 +48,13 @@ const AdminControl = () => {
         };
 
         const fetchAllPlayerFutures = async () => {
-          const response = await fetch(`http://localhost:8080/futures/all`);
+          const response = await fetch(`${api_url}/futures/all`);
           const data = await response.json();
           setAllPlayerFutures(data);
         };
 
         const fetchCurturn = async () => {
-            const response = await fetch('http://localhost:8080/player/turn');
+            const response = await fetch(`${api_url}/player/turn`);
             const data = await response.json();
             setCurturn(data);
           };

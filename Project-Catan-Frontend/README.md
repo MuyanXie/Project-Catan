@@ -7,7 +7,6 @@ This Frontend is implemented using React.js. The Frontend is designed to be a mu
 * Player Page
 * Abundance Display Page
 * Futures Contract Page
-* Options Contract Page
 * ADMIN Control Panel
 
 For a detailed description of the Frontend, please refer to the README.md in the root directory of this project, which would provide you with an example of how the frontend looks and how it works.

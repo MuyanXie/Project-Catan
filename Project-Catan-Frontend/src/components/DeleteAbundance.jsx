@@ -3,6 +3,7 @@ import classes from "./DeleteAbundance.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api_url from "../config/config.js";
 
 const DeleteAbundance = () => {
   const navigate = useNavigate();
@@ -14,13 +15,13 @@ const DeleteAbundance = () => {
 
 
     const fetchAllAbundancesData = async () => {
-      const response = await fetch('http://localhost:8080/abundances/all');
+      const response = await fetch(`${api_url}/abundances/all`);
       const data = await response.json();
       setAllAbundances(data);
     };
 
     axios
-      .delete(`http://localhost:8080/player/${playerId}/abundances/${id}`)
+      .delete(`${api_url}/${playerId}/abundances/${id}`)
       .then((response) => {
         fetchAllAbundancesData();
       })
@@ -33,7 +34,7 @@ const DeleteAbundance = () => {
 
   useEffect(() => {
     const fetchAllAbundancesData = async () => {
-        const response = await fetch('http://localhost:8080/abundances/all');
+        const response = await fetch(`${api_url}/abundances/all`);
         const data = await response.json();
         setAllAbundances(data);
       };

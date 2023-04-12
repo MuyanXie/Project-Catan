@@ -27,7 +27,6 @@ const Header = ({ title }) => {
         <button onClick={() => navigate('/players')} className={classes.button} >Players</button>
         <button onClick={() => navigate('/abundances')} className={classes.button} >Abundances</button>
         <button onClick={() => navigate('/futures')} className={classes.button} >Futures</button>
-        <button onClick={() => navigate('/options')} className={classes.button} >Options</button>
         <button onClick={() => navigate('/admin')} className={classes.button} >ADMIN</button>
         {token ? (
         <button onClick={handleLogout} className={classes.button}>Logout</button>

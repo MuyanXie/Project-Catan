@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import classes from './AddFutures.module.css';
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const totalTurns = 100;
 
@@ -61,7 +62,7 @@ const AddFutures = () => {
         try {
             const code = JSON.parse(localStorage.getItem("token")).code
             const playerId = JSON.parse(localStorage.getItem("token")).id
-            const response = await axios.post(`http://localhost:8080/player/${playerId}/futures/${code}`, formData);
+            const response = await axios.post(`${api_url}/player/${playerId}/futures/${code}`, formData);
             if (response.status === 201) {
                 navigate('/futures');
             }
@@ -88,13 +89,13 @@ const AddFutures = () => {
 
   useEffect(() => {
     const fetchAllPlayers = async () => {
-      const response = await fetch('http://localhost:8080/player/all');
+      const response = await fetch(`${api_url}/player/all`);
       const data = await response.json();
       setPlayers(data);
     };
 
     const fetchCurturn = async () => {
-      const response = await fetch('http://localhost:8080/player/turn');
+      const response = await fetch(`${api_url}/player/turn`);
       const data = await response.json();
       setCurturn(data);
     };

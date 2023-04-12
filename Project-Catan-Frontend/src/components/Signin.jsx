@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import classes from './Signin.module.css';
 import { useNavigate } from 'react-router-dom';
+import api_url from "../config/config.js";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const SignIn = () => {
     }
     event.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:8080/player/${formData.name}/${formData.code}/signin`);
+      const response = await axios.get(`${api_url}/player/${formData.name}/${formData.code}/signin`);
       if (response.status === 202) {
         const temp = response.data
         temp.code = formData.code
