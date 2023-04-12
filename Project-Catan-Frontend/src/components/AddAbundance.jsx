@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import classes from './AddAbundance.module.css';
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const AddAbundance = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const AddAbundance = () => {
         try {
             const selectedData = {stuff : formData.stuff, id: JSON.parse(localStorage.getItem("token")).id}
             const code = JSON.parse(localStorage.getItem("token")).code
-            const response = await axios.post(`http://localhost:8080/player/${selectedData.id}/abundances/${code}`, selectedData);
+            const response = await axios.post(`${api_url}/player/${selectedData.id}/abundances/${code}`, selectedData);
             if (response.status === 201) {
                 navigate('/abundances');
             }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate,useLocation } from 'react-router-dom';
 import classes from './DeleteFuture.module.css';
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const DeleteFuture = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ const DeleteFuture = () => {
     if (Object.keys(formErrors).length === 0) {
         try {
             const playerid = JSON.parse(localStorage.getItem("token")).id
-            const response = await axios.delete(`http://localhost:8080/player/${playerid}/futures/${futureid}/${formData.code}`);
+            const response = await axios.delete(`${api_url}/player/${playerid}/futures/${futureid}/${formData.code}`);
             if (response.status === 200) {
                 navigate('/admin');
             }

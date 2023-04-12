@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import classes from './RegistrationForm.module.css';
+import api_url from "../config/config.js";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ const RegisterForm = () => {
     if (Object.keys(formErrors).length === 0) {
         try {
             const selectedData = {name : formData.name, code : formData.password}
-            const response = await axios.post('http://localhost:8080/player', selectedData);
+            const response = await axios.post(`${api_url}/player`, selectedData);
             const temp = response.data
             temp.code = formData.password
             if (response.status === 201) {
@@ -96,6 +97,7 @@ const RegisterForm = () => {
       </label>
       <br />
       <button type="submit" className={classes.btn}>Register</button>
+
     </form>
   );
   }

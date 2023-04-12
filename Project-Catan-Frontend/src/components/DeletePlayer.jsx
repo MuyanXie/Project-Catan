@@ -3,7 +3,7 @@ import classes from "./DeletePlayer.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import api_url from "../config/config.js";
 
 const DeletePlayer = () => {
 
@@ -26,7 +26,7 @@ const DeletePlayer = () => {
 
   useEffect(() => {
     const fetchAllPlayers = async () => {
-      const response = await fetch('http://localhost:8080/player/all');
+      const response = await fetch(`${api_url}/player/all`);
       const data = await response.json();
       setPlayers(data);
     };
@@ -49,7 +49,7 @@ const DeletePlayer = () => {
       try {
           const playerId = formData.playerId;
           const code = formData.code;
-          const response = await axios.delete(`http://localhost:8080/player/${playerId}/${code}`);
+          const response = await axios.delete(`${api_url}/player/${playerId}/${code}`);
           if (response.status === 202) {
               navigate('/admin');
           }

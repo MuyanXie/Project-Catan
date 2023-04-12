@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate,useLocation } from 'react-router-dom';
 import classes from './ChangeTurn.module.css';
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const ChangeTurn = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ const ChangeTurn = () => {
 
     if (Object.keys(formErrors).length === 0) {
         try {
-            const response = await axios.put(`http://localhost:8080/player/changeTURN/${formData.code}/${formData.turn}`);
+            const response = await axios.put(`${api_url}/player/changeTURN/${formData.code}/${formData.turn}`);
             if (response.status === 202) {
                 navigate('/admin');
             }

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './UpdateFutures.module.css';
 import { useLocation } from 'react-router-dom';
 import Header from "./Header";
+import api_url from "../config/config.js";
 
 const UpdateFutures = () => {
   const location = useLocation();
@@ -76,7 +77,7 @@ const UpdateFutures = () => {
         try {
             const code = formData.authorizationCode
             const playerId = JSON.parse(localStorage.getItem("token")).id
-            const response = await axios.put(`http://localhost:8080/player/${playerId}/futures/${formData.id}/generalupdatefutures/${code}`, formData);
+            const response = await axios.put(`${api_url}/player/${playerId}/futures/${formData.id}/generalupdatefutures/${code}`, formData);
             if (response.status === 200) {
                 navigate('/admin');
             }
@@ -103,7 +104,7 @@ const UpdateFutures = () => {
 
   useEffect(() => {
     const fetchAllPlayers = async () => {
-      const response = await fetch('http://localhost:8080/player/all');
+      const response = await fetch(`${api_url}/player/all`);
       const data = await response.json();
       setPlayers(data);
     };
